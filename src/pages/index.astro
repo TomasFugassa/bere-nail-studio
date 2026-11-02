@@ -1,0 +1,119 @@
+---
+import { Image } from 'astro:assets';
+import '@fontsource/bodoni-moda/400.css';
+import '@fontsource/bodoni-moda/400-italic.css';
+import '@fontsource/bodoni-moda/600.css';
+import '@fontsource/archivo/400.css';
+import '@fontsource/archivo/500.css';
+import '@fontsource/archivo/600.css';
+import '@fontsource/archivo/700.css';
+import '../styles/site.css';
+import '../styles/motion.css';
+import { getView } from '../lib/view';
+import Booking from '../components/Booking.astro';
+import '../styles/booking.css';
+import illustration from '../assets/illustration.png';
+
+const {photos,hero,secondary,studio,services,serviceOptions,copy,location:place,faq,demo}=await getView();
+const filters = [{ id: 'all', label: 'Toda la colección' }, { id: 'sutil', label: 'Sutiles' }, { id: 'color', label: 'Con color' }, { id: 'arte', label: 'Nail art' }];
+const heroSlides = [hero, ...photos.filter(photo=>photo.id!==hero.id)].slice(0,5);
+const ribbonWords = copy.ribbon;
+---
+<!doctype html>
+<html lang="es-UY">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explorá el universo de Estudio Demo: manicuría, nail art y cuidado de manos y pies en Montevideo. Proyecto piloto de diseño web." />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="theme-color" content="#f7f2e9" />
+    <title>Estudio Demo — Uñas que dicen mucho · Piloto</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="pilot-bar"><span class="pilot-dot"></span> Vista previa privada · {demo ? 'modo demostración' : 'Estudio Demo'} <span class="pilot-bar-end">Estudio Demo / Montevideo</span></div>
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="Estudio Demo, inicio"><span>Estudio Demo<span class="brand-star" aria-hidden="true">✳</span></span><small>STUDIO</small></a>
+      <nav class="desktop-nav" aria-label="Navegación principal"><a href="#coleccion">La colección</a><a href="#servicios">Servicios</a><a href="#estudio">El universo Estudio Demo</a></nav>
+      <a class="header-cta" href="#reservas">Tu próximo turno <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+    </header>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden><a href="#coleccion">La colección</a><a href="#servicios">Servicios</a><a href="#estudio">El universo Estudio Demo</a><a href="#reservas">Tu próximo turno ↗</a></nav>
+
+    <main id="contenido">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="line"></span> Manicuría & nail art <span class="eyebrow-location">/ MVD</span></p>
+          <h1 id="hero-title">{copy.heroLine1}<br />{copy.heroLine2} <em>{copy.heroAccent}</em></h1>
+          <p class="hero-description">{copy.heroDescription}</p>
+          <div class="hero-actions"><a class="button button-dark" href="#coleccion">Encontrá tu estilo <span aria-hidden="true">↘</span></a><a class="text-link" href="#servicios">Conocé los servicios <span aria-hidden="true">↗</span></a></div>
+          <div class="hero-note"><svg width="56" height="31" viewBox="0 0 56 31" fill="none" aria-hidden="true"><path d="M2 5c10 23 36 21 47 6M39 7l13 1-4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg><span>El flechazo está en los detalles</span></div>
+        </div>
+        <div class="hero-composition" data-tilt>
+          <div class="hero-halo" aria-hidden="true"></div>
+          <div class="orbit-label" aria-hidden="true">HECHO PARA EXPRESARTE</div>
+          <figure class="hero-photo" aria-label="Diseños destacados"><div class="hero-visual"><img class="is-current" src={hero.large} alt={hero.alt} width="804" height="804" loading="eager" fetchpriority="high" /><img alt="" aria-hidden="true" width={804} height={804} decoding="async" /><div class="hero-player"><button type="button" id="hero-prev" aria-label="Diseño destacado anterior">←</button><span id="hero-position">01 / {String(heroSlides.length).padStart(2, '0')}</span><button type="button" id="hero-next" aria-label="Diseño destacado siguiente">→</button></div></div><figcaption><span id="hero-caption">{hero.number} / {hero.title}</span><span aria-hidden="true">↗</span></figcaption></figure>
+          <script id="hero-slides" type="application/json" set:html={JSON.stringify(heroSlides.map(({ id, number, title, alt, large }) => ({ id, number, title, alt, src: large }))).replace(/</g, '\\u003c')} />
+          <div class="round-stamp" aria-hidden="true"><span>PEQUEÑAS OBRAS</span><b>gran<br /><em>actitud</em></b><span>Estudio Demo · NAIL ART</span></div>
+          <figure class="hero-postcard"><img src={secondary.thumbnail} alt={secondary.alt} width="280" height="280" loading="eager" /><figcaption>{secondary.title} <span aria-hidden="true">✧</span></figcaption></figure>
+          <svg class="hero-spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 58 34 85 15 66 42 100 50 66 58 85 85 58 66 50 100 42 66 15 85 34 58 0 50 34 42 15 15 42 34Z" fill="currentColor" /></svg>
+        </div>
+        <div class="hero-bottom"><span>Tu estilo no necesita permiso</span><a href="#coleccion" aria-label="Bajar a la colección">Explorá <span aria-hidden="true">↓</span></a></div>
+      </section>
+
+      <div class="ribbon-frame"><div class="ribbon" aria-hidden="true"><div class="ribbon-track">{[0, 1].map(() => <div class="ribbon-group">{ribbonWords.map((word) => <><b>{word}</b><span>✳</span></>)}</div>)}</div></div></div>
+
+      <section class="collection section" id="coleccion" aria-labelledby="collection-title">
+        <div class="section-heading"><div><p class="eyebrow">01 / La colección</p><h2 id="collection-title">{copy.collectionLine1}<br /><em>{copy.collectionLine2}</em></h2></div><p class="section-intro">Sutil, intenso o imposible de ignorar.<br />Diseños reales para encontrar<br />ese que te hace decir: <em>«es por acá».</em></p></div>
+        <div class="collection-controls"><div class="filters" aria-label="Filtrar diseños">{filters.map((filter) => <button class:list={['filter', { active: filter.id === 'all' }]} type="button" data-filter={filter.id} aria-pressed={filter.id === 'all'}>{filter.label}</button>)}</div><p class="collection-count" aria-live="polite"><span id="photo-count">{photos.length}</span> diseños <span aria-hidden="true">↙</span></p></div>
+        <div class="gallery">
+          {photos.map((photo) => <article class="gallery-item" data-category={photo.category}>
+            <button class="photo-button" type="button" data-photo-id={photo.id} data-photo-number={photo.number} data-photo-src={photo.large} data-photo-title={photo.title} data-photo-alt={photo.alt} data-photo-label={photo.label} aria-label={`Ver diseño ${photo.number}: ${photo.title}`}>
+              <img src={photo.thumbnail} alt={photo.alt} width="600" height="600" loading="lazy" decoding="async" />
+              <span class="photo-index">{photo.number}</span><span class="photo-open" aria-hidden="true">↗</span><span class="photo-hint">Ver el detalle</span>
+            </button>
+            <div class="photo-caption"><h3>{photo.title}</h3><span>{photo.label}</span></div>
+          </article>)}
+        </div>
+        <div class="collection-end"><span class="small-star" aria-hidden="true">✳</span><p>¿Ya encontraste tu favorito?<br /><span>Abrilo y llevá la idea a tu próxima consulta.</span></p><a class="text-link" hidden href={studio.instagram} target="_blank" rel="noopener noreferrer">Más en Instagram <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <section class="services section" id="servicios" aria-labelledby="services-title">
+        <div class="services-header"><p class="eyebrow">02 / A tu manera</p><h2 id="services-title">El estilo empieza<br /><em>con una elección</em></h2><p>Explorá los servicios del estudio.<br />Los detalles y la disponibilidad se consultan al agendar.</p></div>
+        <div class="service-list">{services.map((service) => <details class="service-row"><summary><span class="service-number">{service.number}</span><h3>{service.title}</h3><span class="service-toggle" aria-hidden="true">+</span></summary><div class="service-body"><div class="service-tags">{service.tags.map((tag) => <span>{tag}</span>)}</div><p>{service.description}</p><a href="#contacto" class="service-inquiry" data-service={service.tags[0]}>Consultar por este servicio <span aria-hidden="true">↗</span></a></div></details>)}</div>
+        <span class="services-flower" aria-hidden="true">✳</span>
+      </section>
+
+      <section class="studio section" id="estudio" aria-labelledby="studio-title">
+        <div class="studio-art"><div class="studio-art-bg" aria-hidden="true"></div><Image src={illustration} alt="Imagen conceptual de manicura." width={580} format="webp" quality={85} loading="lazy" /><span class="studio-art-label">EL UNIVERSO Estudio Demo</span><span class="studio-art-star" aria-hidden="true">✳</span></div>
+        <div class="studio-copy"><p class="eyebrow">03 / Estudio Demo · by administración</p><h2 id="studio-title">{copy.studioLine1}<br /><em>{copy.studioLine2}</em></h2><p class="studio-lead">{copy.studioLead}</p><p>{studio.intro}</p><a class="text-link" hidden href={studio.instagram} target="_blank" rel="noopener noreferrer">Conocé el estudio en Instagram <span aria-hidden="true">↗</span></a><div class="studio-signature" aria-hidden="true">Estudio Demo, <em>un poquito de vos</em></div></div>
+      </section>
+
+      <section class="journey section" aria-label="Cómo preparar tu consulta">
+        <div class="journey-heading"><p class="eyebrow">De la inspiración a tu próxima visita</p><p>Una idea tuya<br /><em>La hacemos conversar</em></p></div>
+        <ol><li><span>01</span><div><h3>Encontrá tu inspiración</h3><p>Explorá la colección y guardá un diseño como referencia para la consulta.</p></div></li><li><span>02</span><div><h3>Contanos qué te gusta</h3><p>Elegí un servicio y sumá ese color, detalle u ocasión que tenés en mente.</p></div></li><li><span>03</span><div><h3>Probá la demostración</h3><p>Explorá cómo funcionaría la experiencia de un estudio ficticio.</p></div></li></ol>
+      </section>
+
+      <Booking />
+
+      <section class="contact section" id="contacto" aria-labelledby="contact-title">
+        <div class="contact-heading"><p class="eyebrow">04 / Tu próxima idea</p><h2 id="contact-title">{copy.contactLine1}<br /><em>{copy.contactLine2}</em><span aria-hidden="true">✳</span></h2><p>Elegí qué te gustaría hacerte y llevá<br />tu idea a la conversación con Estudio Demo.</p><div class="contact-location"><span class="location-dot"></span>{studio.location}</div></div>
+        <form id="inquiry-form" class="inquiry-form" data-phone={studio.whatsappPhone}><p class="form-kicker">Empezá por acá <span aria-hidden="true">↘</span></p><label for="service">¿Qué servicio te interesa?</label><div class="select-wrap"><select id="service" name="service"><option value="" selected>Elegí un servicio</option>{serviceOptions.map((option) => <option value={option}>{option}</option>)}</select><span aria-hidden="true">⌄</span></div>
+          <label for="idea">¿Tenés algo en mente? <span>(opcional)</span></label><textarea id="idea" name="idea" rows="3" maxlength="500" placeholder="Un color, una ocasión, una idea…"></textarea>
+          <div class="selected-reference" id="selected-reference" hidden><span>Tu inspiración</span><strong id="reference-name"></strong><button type="button" id="clear-reference" aria-label="Quitar diseño de referencia">×</button></div>
+          <button type="submit" class="button button-dark">Probar consulta <span aria-hidden="true">↗</span></button><p class="form-note">Demostración: no se envían mensajes.</p><p class="form-demo-note">Las imágenes y los datos pertenecen a una demostración ficticia.</p>
+          <p id="form-status" role="status" class="form-status"></p>
+        </form>
+      </section>
+
+      <section class="location-section section" id="ubicacion" aria-labelledby="location-title"><div><p class="eyebrow">Nos vemos en el estudio</p><h2 id="location-title">El lugar donde<br/><em>pasa la magia</em></h2><p class="location-address">{place.confirmed ? place.address : 'La dirección se confirmará con el estudio.'}</p>{place.confirmed&&<a class="text-link" href={'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(place.address)} target="_blank" rel="noopener noreferrer">Cómo llegar en Google Maps ↗</a>}</div><div class="location-map">{place.confirmed ? <><div id="map-placeholder"><span class="map-flower" aria-hidden="true">✳</span><p>Tu próximo encuentro con Estudio Demo</p><button type="button" class="button button-dark" id="load-map" data-map-src={'https://www.google.com/maps?q='+encodeURIComponent(place.address)+'&output=embed'}>Ver el mapa ↗</button><small>Al abrirlo, se conecta con Google Maps.</small></div><iframe id="studio-map" title={'Ubicación de '+studio.name} referrerpolicy="no-referrer" loading="lazy" allowfullscreen hidden></iframe></> : <p>Ubicación pendiente de confirmar.</p>}</div></section>
+      <section class="faq section" aria-labelledby="faq-title"><div><p class="eyebrow">Antes de escribir</p><h2 id="faq-title">Pequeñas<br /><em>respuestas</em></h2></div><div class="faq-list">{faq.map(item=><details><summary>{item.question}<span aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-top"><a href="#" class="footer-wordmark" aria-label="Volver al inicio">Estudio Demo<span>STUDIO</span></a><div class="footer-social"><a hidden href={studio.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a><a hidden href={studio.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</a><a hidden href={studio.whatsappProfile} target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div></div><div class="footer-bottom"><span>Montevideo, Uruguay</span><span>Una colección de pequeños detalles</span><span>Proyecto piloto · uso local</span></div></footer>
+
+    <dialog id="photo-dialog" class="photo-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><button class="dialog-close" type="button" aria-label="Cerrar fotografía">×</button><div class="dialog-image-wrap"><img id="dialog-image" alt="" /><button class="dialog-prev" type="button" aria-label="Ver diseño anterior">←</button><button class="dialog-next" type="button" aria-label="Ver diseño siguiente">→</button></div><div class="dialog-caption"><div><p id="dialog-label" class="eyebrow"></p><h2 id="dialog-title"></h2><p class="dialog-position" id="dialog-position" aria-live="polite"></p></div><button id="use-reference" class="button button-dark" type="button">Usar como inspiración <span aria-hidden="true">↗</span></button></div></div></dialog>
+    <script src="../scripts/interactions.ts"></script>
+  </body>
+</html>

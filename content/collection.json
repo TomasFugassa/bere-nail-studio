@@ -1,0 +1,76 @@
+{
+  "heroId": "03",
+  "secondaryId": "01",
+  "photos": [
+    {
+      "id": "01",
+      "title": "Diseño conceptual 1",
+      "category": "sutil",
+      "image": "/src/assets/nail-01.png",
+      "alt": "Imagen conceptual de manicura 1"
+    },
+    {
+      "id": "02",
+      "title": "Diseño conceptual 2",
+      "category": "arte",
+      "image": "/src/assets/nail-02.png",
+      "alt": "Imagen conceptual de manicura 2"
+    },
+    {
+      "id": "03",
+      "title": "Diseño conceptual 3",
+      "category": "color",
+      "image": "/src/assets/nail-03.png",
+      "alt": "Imagen conceptual de manicura 3"
+    },
+    {
+      "id": "04",
+      "title": "Diseño conceptual 4",
+      "category": "arte",
+      "image": "/src/assets/nail-04.png",
+      "alt": "Imagen conceptual de manicura 4"
+    },
+    {
+      "id": "05",
+      "title": "Diseño conceptual 5",
+      "category": "arte",
+      "image": "/src/assets/nail-05.png",
+      "alt": "Imagen conceptual de manicura 5"
+    },
+    {
+      "id": "06",
+      "title": "Diseño conceptual 6",
+      "category": "color",
+      "image": "/src/assets/nail-06.png",
+      "alt": "Imagen conceptual de manicura 6"
+    },
+    {
+      "id": "07",
+      "title": "Diseño conceptual 7",
+      "category": "sutil",
+      "image": "/src/assets/nail-07.png",
+      "alt": "Imagen conceptual de manicura 7"
+    },
+    {
+      "id": "08",
+      "title": "Diseño conceptual 8",
+      "category": "arte",
+      "image": "/src/assets/nail-08.png",
+      "alt": "Imagen conceptual de manicura 8"
+    },
+    {
+      "id": "09",
+      "title": "Diseño conceptual 9",
+      "category": "color",
+      "image": "/src/assets/nail-09.png",
+      "alt": "Imagen conceptual de manicura 9"
+    },
+    {
+      "id": "10",
+      "title": "Diseño conceptual 10",
+      "category": "sutil",
+      "image": "/src/assets/nail-10.png",
+      "alt": "Imagen conceptual de manicura 10"
+    }
+  ]
+}

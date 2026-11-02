@@ -1,0 +1,61 @@
+
+/* Motion follows the original editorial layout; all UI remains usable without it. */
+.hero-visual{position:relative;aspect-ratio:.85;border-radius:47% 47% 8px 8px;overflow:hidden;box-shadow:10px 14px 0 rgba(84,41,57,.1);background:var(--blush)}
+.hero-visual>img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;border-radius:0;box-shadow:none;object-fit:cover;opacity:0;transform:scale(1.055);transition:opacity .95s ease,transform 5.8s cubic-bezier(.2,.6,.3,1)}
+.hero-visual>img.is-current{opacity:1;transform:scale(1)}
+.hero-player{position:absolute;bottom:17px;left:17px;display:flex;align-items:center;gap:2px;padding:3px;background:rgba(53,33,39,.9);color:var(--cream);border:1px solid #ffffff45;border-radius:40px;z-index:2;transform:rotate(7deg);transform-origin:left bottom;box-shadow:0 4px 16px #35212722}
+.hero-player button{display:grid;place-items:center;width:36px;height:36px;background:transparent;color:inherit;border:0;border-radius:50%;font-size:18px;transition:background .2s,color .2s,transform .2s}
+.hero-player button:hover,.hero-player button:focus-visible{background:var(--lime);color:var(--ink)}
+.hero-player button:active{transform:scale(.9)}
+#hero-position{font-size:9px;letter-spacing:.06em;min-width:49px;text-align:center}
+.ribbon>.ribbon-track{gap:0;animation:ribbon-right 23s linear infinite}
+.ribbon-group{display:flex;align-items:center;gap:35px;padding-right:35px;flex-shrink:0}
+.ribbon-group b{font:inherit}
+@keyframes ribbon-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.filter{transition:background .25s,border-color .25s,color .25s,transform .25s,box-shadow .25s}
+.filter:hover{transform:translateY(-2px);box-shadow:0 5px 12px #3521270d}
+.filter:active{transform:translateY(0) scale(.96)}
+.photo-button{border-radius:6px;transition:box-shadow .4s,translate .4s}
+.photo-button img{transition:transform .8s cubic-bezier(.2,.7,.3,1),filter .6s}
+.photo-button::after{content:'';position:absolute;inset:0;border:1px solid #35212708;border-radius:inherit;pointer-events:none;transition:border-color .3s}
+.photo-caption h3{transition:color .3s}
+.gallery-item:focus-within .photo-caption h3,.gallery-item:hover .photo-caption h3{color:var(--pink)}
+.photo-open{transition:background .35s,transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .35s}
+.photo-button:focus-visible .photo-open{background:var(--lime);transform:rotate(45deg)}
+.button span,.text-link span,.header-cta span{display:inline-block;transition:transform .3s}
+.button:hover span,.text-link:hover span,.header-cta:hover span{transform:translate(3px,-3px)}
+.service-row h3{transition:color .3s,translate .3s}
+.service-row summary:hover h3{translate:5px 0}
+.service-toggle{transition:transform .4s,background .3s,color .3s}
+.inquiry-form{transition:box-shadow .35s}
+.selected-reference{animation:reference-appear .4s ease-out}
+@keyframes reference-appear{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}
+@supports(interpolate-size:allow-keywords){
+ .service-row,.faq-list details{interpolate-size:allow-keywords}
+ .service-row::details-content,.faq-list details::details-content{block-size:0;overflow:clip;transition:block-size .42s cubic-bezier(.2,.7,.3,1),content-visibility .42s allow-discrete}
+ .service-row[open]::details-content,.faq-list details[open]::details-content{block-size:auto}
+}
+@media(hover:hover) and (pointer:fine){
+ .photo-button:hover{translate:0 -5px;box-shadow:0 18px 30px -18px #35212770}
+ .photo-button:hover img{transform:scale(1.065);filter:saturate(1.06)}
+ .hero-postcard:hover{animation-play-state:paused;box-shadow:0 14px 30px #3521272e}
+}
+@media(prefers-reduced-motion:no-preference){
+ .hero-postcard{animation:postcard-drift 7s ease-in-out infinite;transition:box-shadow .4s}
+ .hero-spark{animation:spark-turn 14s ease-in-out infinite}
+ .hero-halo{animation:halo-breathe 9s ease-in-out infinite}
+ .gallery-item.reveal{transition-delay:calc(var(--reveal-order,0)*55ms)}
+ @keyframes postcard-drift{0%,100%{translate:0 0}50%{translate:0 -9px}}
+ @keyframes spark-turn{0%,100%{rotate:0deg}50%{rotate:25deg}}
+ @keyframes halo-breathe{0%,100%{scale:1}50%{scale:1.025}}
+}
+@media(max-width:700px){.ribbon-group{gap:24px;padding-right:24px}.hero-player{bottom:12px;left:12px}.hero-player button{width:34px;height:34px}.hero-visual{box-shadow:7px 10px 0 #54293919}}
+@media(prefers-reduced-motion:reduce){.hero-visual>img,.hero-visual>img.is-current{transform:none}.hero-postcard,.hero-halo,.hero-spark{animation:none!important}.photo-button:hover,.service-row summary:hover h3{translate:0}.photo-button:hover img{transform:none}}
+
+/* The requested automatic showcase starts on every page load. */
+body .ribbon>.ribbon-track{animation:ribbon-right 23s linear infinite!important;animation-play-state:running!important}
+body .hero-visual>img{transition:opacity .95s ease!important}
+
+/* Each half covers the whole viewport and has exactly the same content. */
+body .ribbon>.ribbon-track{animation-duration:var(--ribbon-duration,23s)!important;gap:0}
+.ribbon-group{flex:0 0 auto}

@@ -1,0 +1,28 @@
+{
+  "name": "Estudio Demo",
+  "instagram": "https://example.com",
+  "facebook": "https://example.com",
+  "whatsappProfile": "https://example.com",
+  "whatsappPhone": "59800000000",
+  "email": "demo@example.com",
+  "location": "Ubicación de ejemplo",
+  "intro": "Colección de imágenes conceptuales para demostrar una página de un estudio ficticio.",
+  "services": [
+    {
+      "number": "01",
+      "title": "Manicura de ejemplo",
+      "tags": [
+        "Manicura"
+      ],
+      "description": "Servicio ficticio para la demostración."
+    },
+    {
+      "number": "02",
+      "title": "Diseños de ejemplo",
+      "tags": [
+        "Diseño"
+      ],
+      "description": "Opciones ficticias para la demostración."
+    }
+  ]
+}

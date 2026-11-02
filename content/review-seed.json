@@ -1,0 +1,203 @@
+{
+  "content": {
+    "studio": {
+      "name": "Estudio Demo",
+      "instagram": "https://example.com",
+      "facebook": "https://example.com",
+      "whatsappProfile": "https://example.com",
+      "whatsappPhone": "59800000000",
+      "email": "demo@example.com",
+      "location": "Ubicación de ejemplo",
+      "intro": "Colección de imágenes conceptuales para demostrar una página de un estudio ficticio.",
+      "services": [
+        {
+          "number": "01",
+          "title": "Manicura de ejemplo",
+          "tags": [
+            "Manicura"
+          ],
+          "description": "Servicio ficticio para la demostración."
+        },
+        {
+          "number": "02",
+          "title": "Diseños de ejemplo",
+          "tags": [
+            "Diseño"
+          ],
+          "description": "Opciones ficticias para la demostración."
+        }
+      ]
+    },
+    "collection": {
+      "heroId": "03",
+      "secondaryId": "01",
+      "photos": [
+        {
+          "id": "01",
+          "title": "Diseño conceptual 1",
+          "alt": "Imagen conceptual de manicura 1",
+          "category": "sutil",
+          "image": "/src/assets/nail-01.png"
+        },
+        {
+          "id": "02",
+          "title": "Diseño conceptual 2",
+          "alt": "Imagen conceptual de manicura 2",
+          "category": "arte",
+          "image": "/src/assets/nail-02.png"
+        },
+        {
+          "id": "03",
+          "title": "Diseño conceptual 3",
+          "alt": "Imagen conceptual de manicura 3",
+          "category": "color",
+          "image": "/src/assets/nail-03.png"
+        },
+        {
+          "id": "04",
+          "title": "Diseño conceptual 4",
+          "alt": "Imagen conceptual de manicura 4",
+          "category": "arte",
+          "image": "/src/assets/nail-04.png"
+        },
+        {
+          "id": "05",
+          "title": "Diseño conceptual 5",
+          "alt": "Imagen conceptual de manicura 5",
+          "category": "arte",
+          "image": "/src/assets/nail-05.png"
+        },
+        {
+          "id": "06",
+          "title": "Diseño conceptual 6",
+          "alt": "Imagen conceptual de manicura 6",
+          "category": "color",
+          "image": "/src/assets/nail-06.png"
+        },
+        {
+          "id": "07",
+          "title": "Diseño conceptual 7",
+          "alt": "Imagen conceptual de manicura 7",
+          "category": "sutil",
+          "image": "/src/assets/nail-07.png"
+        },
+        {
+          "id": "08",
+          "title": "Diseño conceptual 8",
+          "alt": "Imagen conceptual de manicura 8",
+          "category": "arte",
+          "image": "/src/assets/nail-08.png"
+        },
+        {
+          "id": "09",
+          "title": "Diseño conceptual 9",
+          "alt": "Imagen conceptual de manicura 9",
+          "category": "color",
+          "image": "/src/assets/nail-09.png"
+        },
+        {
+          "id": "10",
+          "title": "Diseño conceptual 10",
+          "alt": "Imagen conceptual de manicura 10",
+          "category": "sutil",
+          "image": "/src/assets/nail-10.png"
+        }
+      ]
+    },
+    "copy": {
+      "heroLine1": "Uñas que",
+      "heroLine2": "dicen",
+      "heroAccent": "mucho.",
+      "heroDescription": "Un color. Un detalle. Un poquito de vos. Encontrá tu próxima inspiración en Estudio Demo.",
+      "collectionLine1": "Tu mood.",
+      "collectionLine2": "Tus reglas.",
+      "studioLine1": "Cada mano,",
+      "studioLine2": "una historia.",
+      "studioLead": "Y cada diseño, una forma de contarla.",
+      "contactLine1": "¿Hacemos",
+      "contactLine2": "match?",
+      "ribbon": [
+        "NAIL ART",
+        "COLOR CON ACTITUD",
+        "UN POQUITO DE VOS",
+        "Estudio Demo"
+      ]
+    },
+    "booking": {
+      "enabled": false,
+      "services": [
+        {
+          "id": "semi",
+          "name": "Esmaltado semipermanente",
+          "minutes": 15,
+          "active": true
+        },
+        {
+          "id": "kapping",
+          "name": "Kapping",
+          "minutes": 30,
+          "active": true
+        },
+        {
+          "id": "builder",
+          "name": "Builder",
+          "minutes": 60,
+          "active": true
+        },
+        {
+          "id": "softgel",
+          "name": "SoftGel",
+          "minutes": 60,
+          "active": true
+        },
+        {
+          "id": "reconstruccion",
+          "name": "Reconstrucción de uñas",
+          "minutes": 60,
+          "active": true
+        },
+        {
+          "id": "pies",
+          "name": "Estética de pies",
+          "minutes": 30,
+          "active": true
+        },
+        {
+          "id": "podologia",
+          "name": "Podología",
+          "minutes": 60,
+          "active": true
+        },
+        {
+          "id": "nailart",
+          "name": "Nail art y decoraciones",
+          "minutes": 30,
+          "active": true
+        }
+      ],
+      "windows": [],
+      "minLeadMinutes": 120,
+      "bufferMinutes": 15,
+      "maxAdvanceDays": 60
+    },
+    "location": {
+      "address": "",
+      "confirmed": false
+    },
+    "faq": [
+      {
+        "question": "¿Cómo reservo un turno?",
+        "answer": "Esta es una demostración: la agenda está desactivada y no se envían consultas."
+      },
+      {
+        "question": "¿Puedo compartir un diseño?",
+        "answer": "Abrí un diseño de la colección y elegí Usar como inspiración. Podés llevar esa referencia a tu reserva o consulta."
+      },
+      {
+        "question": "¿Cómo cambio o cancelo un turno?",
+        "answer": "Guardá el enlace privado que aparece al reservar. Desde allí podés cancelar; para cambiarlo, consultá al estudio."
+      }
+    ]
+  },
+  "media": []
+}
