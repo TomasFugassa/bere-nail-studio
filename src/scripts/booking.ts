@@ -17,8 +17,7 @@ const form = document.querySelector<HTMLFormElement>('#booking-form'),
 let selected: number | null = null,
   key = crypto.randomUUID(),
   loading = false,
-  requestVersion = 0,
-  sitePhone = '';
+  requestVersion = 0;
 const message = (text: string) => {
   if (status) status.textContent = text;
 };
@@ -191,8 +190,6 @@ form?.addEventListener('submit', async (event) => {
     const link = document.querySelector<HTMLAnchorElement>('#booking-private-link');
     if (link) link.href = '/mi-turno#token=' + encodeURIComponent(data.token);
     const wa = document.querySelector<HTMLAnchorElement>('#booking-whatsapp');
-    sitePhone =
-      document.querySelector<HTMLFormElement>('#inquiry-form')?.dataset.phone || '';
     if (wa) wa.hidden = true;
     message(
       data.demo

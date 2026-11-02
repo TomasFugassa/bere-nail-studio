@@ -13,8 +13,6 @@ presentacion/*.webm
 .local-admin-access.txt
 
 .demo-review-data/
-.demo-data/
-.demo-review-data/
 *.sqlite
 *.sqlite-*
 

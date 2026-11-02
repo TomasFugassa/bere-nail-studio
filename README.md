@@ -1,11 +1,11 @@
 # Estudio de uñas — demostración
 
-Proyecto de demostración para un estudio ficticio: colección visual, servicios y panel de administración. Utiliza Astro, TypeScript, Node.js y SQLite.
+Demostración para un estudio ficticio, con galería, servicios, reservas y panel de administración. Desarrollada con Astro, TypeScript, Node.js y SQLite.
 
-Las imágenes de la galería son conceptuales y proceden de los recursos creados para Mora Nail Studio. Los datos de contacto y ubicación son ficticios. Las consultas están deshabilitadas y la agenda está desactivada por defecto.
+Las imágenes son conceptuales y los datos de contacto son ficticios. Las consultas y la agenda están desactivadas por defecto.
 
 ## Ejecución local
 
-Se necesita Node.js 22.16 o posterior. Ejecutá `npm ci` y `npm run dev`. La página estará disponible en http://127.0.0.1:4321. Para comprobar tipos usá `npm run check` y para compilar `npm run build`.
+Con Node.js 22.16 o posterior, ejecutá `npm ci` y `npm run dev`. Abrí http://127.0.0.1:4321; el panel está en `/admin` y su contraseña inicial se guarda en `.local-admin-access.txt`.
 
-El panel está en `/admin`. El modo de demostración es la configuración predeterminada y guarda datos locales. No ingreses información real ni uses esta configuración para un servicio público.
+Para comprobar el proyecto: `npm run check`, `npm run test:booking` y `npm run build`. Usá únicamente datos ficticios: esta configuración no está preparada para producción.

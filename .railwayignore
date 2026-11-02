@@ -5,8 +5,6 @@ dist/
 .env
 .env.*
 .demo-data/
-.demo-data/
-.demo-review-data/
 .demo-review-data/
 .local-admin-access.txt
 qa-output/
