@@ -1,6 +1,6 @@
 # Estudio de uñas — demostración
 
-Demostración para un estudio ficticio, con galería, servicios, reservas y panel de administración. Desarrollada con Astro, TypeScript, Node.js y SQLite.
+Propuesta web para un estudio de uñas real, con galería, servicios, reservas y panel de administración. Desarrollada con Astro, TypeScript, Node.js y SQLite.
 
 Las imágenes son conceptuales y los datos de contacto son ficticios. Las consultas y la agenda están desactivadas por defecto.
 
